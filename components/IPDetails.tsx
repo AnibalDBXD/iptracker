@@ -1,7 +1,13 @@
-const IPDetails = () => {
+type Props = {
+  section: string;
+  data: string | number;
+};
+
+const IPDetails: React.FC<Props> = ({ section, data }): JSX.Element => {
   return (
     <div>
-      <h1>IPDetails</h1>
+      <small className="text-gray-500 font-light">{section}</small>
+      <p className="text-xl text-center text-black font-semibold">{data}</p>
     </div>
   );
 };

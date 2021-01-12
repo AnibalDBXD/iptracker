@@ -1,16 +1,19 @@
+import Arrow from "./icons/Arrow";
+
 type Props = {
   placeholder: string;
 };
 
 const Form: React.FC<Props> = ({ placeholder }): JSX.Element => {
   return (
-    <form>
+    <form className="m-4 flex justify-center">
       <input
-        className="my-8 p-2 rounded-l-lg w-2/4 h-10 focus:outline-none focus:ring focus:border-blue-300"
+        className="rounded-l-lg p-4 border-t w-2/4 h-10 mr-0 border-b border-l focus:outline-none focus:ring focus:border-blue-300 text-gray-800 border-gray-200 bg-white"
         placeholder={placeholder}
-        type="text"
       />
-      <button className="bg-black h-10 w-10 text-white">{">"}</button>
+      <button className="px-8 rounded-r-lg bg-gray-600 text-white border-bg-gray-700 focus:outline-none focus:ring focus:border-blue-300">
+        <Arrow />
+      </button>
     </form>
   );
 };
