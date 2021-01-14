@@ -5,11 +5,11 @@ import Arrow from "./icons/Arrow";
 
 type Props = {
   placeholder: string;
-  setIP: Dispatch<SetStateAction<string>>;
+  setIP: Dispatch<SetStateAction<string | undefined>>;
 };
 
 const Form: React.FC<Props> = ({ placeholder, setIP }): JSX.Element => {
-  const form = useRef<any>(null);
+  const form = useRef<any | string>(null);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const value = form.current["input"].value;

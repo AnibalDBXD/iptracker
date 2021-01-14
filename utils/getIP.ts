@@ -1,7 +1,9 @@
-const getIP = async (): Promise<string | void> => {
+import type { IP } from "../interfaces/app_interfaces";
+const getIP = async (IP = ""): Promise<IP | void> => {
+  const URL = `https://ipwhois.app/json/${IP}?objects=ip,country,city,timezone,isp,latitude,longitude`;
   try {
-    const res = await fetch("https://checkip.amazonaws.com/");
-    return await res.text();
+    const res = await fetch(URL);
+    return await res.json();
   } catch (e) {
     return console.error(e);
   }
