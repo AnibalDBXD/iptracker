@@ -2,13 +2,22 @@ import GoogleMapReact from "google-map-react";
 
 import Mark from "./icons/Mark";
 
-const Map: React.FC = (): JSX.Element => {
+type Props = {
+  lat: number;
+  lng: number;
+};
+
+const Map: React.FC<Props> = ({ lat, lng }): JSX.Element => {
+  const latitude = Number(lat);
+  const longitude = Number(lng);
+  console.log(typeof latitude, latitude);
+  console.log(typeof longitude, longitude);
   return (
     <GoogleMapReact
+      center={{ lat: latitude, lng: longitude }}
       bootstrapURLKeys={{ key: "" }}
-      defaultCenter={{ lat: 59.95, lng: 30.33 }}
       defaultZoom={11}>
-      <Mark lat={59.955413} lng={30.337844} />
+      <Mark lat={latitude} lng={longitude} />
     </GoogleMapReact>
   );
 };

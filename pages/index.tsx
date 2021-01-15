@@ -41,7 +41,7 @@ const IndexPage: React.FC = (): JSX.Element => {
       </div>
       <IPContainer data={IPINFO} className="z-10 fixed left-2/4 -mt-8" style={ipStyles} />
       <div style={mapStyles}>
-        <MapContainer />
+        <MapContainer lat={IPINFO.latitude} lng={IPINFO.longitude} />
       </div>
     </div>
   );
