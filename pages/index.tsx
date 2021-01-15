@@ -12,7 +12,7 @@ const ipStyles = {
 };
 
 const mapStyles = {
-  height: "77%",
+  height: "76.9%",
 };
 
 const IndexPage: React.FC = (): JSX.Element => {
