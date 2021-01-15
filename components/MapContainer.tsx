@@ -10,8 +10,6 @@ type Props = {
 const Map: React.FC<Props> = ({ lat, lng }): JSX.Element => {
   const latitude = Number(lat);
   const longitude = Number(lng);
-  console.log(typeof latitude, latitude);
-  console.log(typeof longitude, longitude);
   return (
     <GoogleMapReact
       center={{ lat: latitude, lng: longitude }}
